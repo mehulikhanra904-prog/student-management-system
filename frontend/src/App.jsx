@@ -47,7 +47,7 @@ function App() {
   function openAdd(){setEditing(null);setForm({...emptyStudent,marks:{...emptyStudent.marks}});setModal(true);setError("")}
   function openEdit(s){setEditing(s._id);setForm({...s,marks:{...s.marks}});setModal(true);setError("")}
   const change=(key,value)=>setForm(f=>({...f,[key]:value}));
-  const markChange=(key,value)=>setForm(f=>({...f,marks:{...f.marks,[key:Number(value)]}}));
+  const markChange=(key,value)=>setForm(f=>({...f,marks:{...f.marks,[key]:Number(value)}}));
 
   async function saveStudent(e){
     e.preventDefault();setLoading(true);setError("");
