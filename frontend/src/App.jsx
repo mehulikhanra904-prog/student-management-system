@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
 
-const API = import.meta.env.VITE_API_URL || "/api";
+const API = (import.meta.env.VITE_API_URL || "https://student-management-system-2-g0rt.onrender.com/api").replace(/\/$/, "");
 const emptyStudent = { name:"", email:"", rollNumber:"", course:"B.Tech CSE", year:1, phone:"", address:"", attendance:75, marks:{dsa:0,dbms:0,os:0,ai:0}, status:"Active" };
 
 async function request(path, options={}) {
